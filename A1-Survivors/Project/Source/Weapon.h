@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GameDev2D.h>
+#include "Types.h"
 
 using namespace GameDev2D;
 

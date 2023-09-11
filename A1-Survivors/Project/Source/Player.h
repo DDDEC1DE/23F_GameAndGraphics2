@@ -14,6 +14,7 @@ private:
 
 public:
     Player(Game* pGame);
+
     virtual ~Player();
 
     virtual void OnUpdate(float deltaTime) override;
@@ -35,5 +36,5 @@ private:
     float m_PickupRadius = 0;
 
     Sprite* m_pSprite = nullptr;
-    Vector2 m_Controls = Vector2(0,0);
+    Vector2 m_Controls = Vector2(0, 0);
 };

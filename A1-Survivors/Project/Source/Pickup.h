@@ -2,6 +2,7 @@
 
 #include <GameDev2D.h>
 #include "Tween.h"
+#include "GameObject.h"
 
 using namespace GameDev2D;
 

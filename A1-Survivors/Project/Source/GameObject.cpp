@@ -2,6 +2,10 @@
 
 using namespace GameDev2D;
 
+GameObject::GameObject()
+{
+}
+
 GameObject::GameObject(Game* pGame)
     : m_pGame( pGame )
 {
