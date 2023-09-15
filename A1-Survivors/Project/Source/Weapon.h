@@ -21,5 +21,5 @@ public:
     virtual void LevelUp() = 0;
 
 protected:
-    Game* m_pGame;
+    Game* m_pGame = nullptr;
 };

@@ -58,9 +58,9 @@ void Player::OnKeyEvent(KeyCode keyCode, KeyState keyState)
         if (keyCode == KeyCode::Right || keyCode == KeyCode::D)
             m_Controls.x += 1;
         if (keyCode == KeyCode::Up || keyCode == KeyCode::W)
-            m_Controls.x += 1;
+            m_Controls.y += 1;
         if (keyCode == KeyCode::Down || keyCode == KeyCode::S)
-            m_Controls.x -= 1;
+            m_Controls.y -= 1;
     }
 
     if (keyState == KeyState::Up)
@@ -70,9 +70,9 @@ void Player::OnKeyEvent(KeyCode keyCode, KeyState keyState)
         if (keyCode == KeyCode::Right || keyCode == KeyCode::D)
             m_Controls.x -= 1;
         if (keyCode == KeyCode::Up || keyCode == KeyCode::W)
-            m_Controls.x -= 1;
+            m_Controls.y -= 1;
         if (keyCode == KeyCode::Down || keyCode == KeyCode::S)
-            m_Controls.x += 1;
+            m_Controls.y += 1;
     }
 }
 
