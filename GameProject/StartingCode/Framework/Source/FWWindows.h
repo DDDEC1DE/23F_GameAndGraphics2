@@ -21,7 +21,7 @@ public:
     FWWindows(int width, int height);
     virtual ~FWWindows();
 
-    virtual int Run() override;
+    virtual int Run(GameCore* game) override;
 
     virtual bool IsKeyDown(int value) override;
     virtual bool IsMouseButtonDown(int id) override;

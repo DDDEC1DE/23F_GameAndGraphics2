@@ -9,3 +9,4 @@
 
 #include "FWCore.h"
 #include "FWWindows.h"
+#include "GameCore.h"
