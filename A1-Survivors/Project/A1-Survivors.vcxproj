@@ -89,10 +89,12 @@
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Pickup.h" />
     <ClInclude Include="Source\Enemy.h" />
+    <ClInclude Include="Source\PoopBullet.h" />
     <ClInclude Include="Source\Types.h" />
     <ClInclude Include="Source\Weapon.h" />
     <ClInclude Include="Source\Weapon_Gun.h" />
     <ClInclude Include="Source\Tween.h" />
+    <ClInclude Include="Source\Weapon_Pooper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Bullet.cpp" />
@@ -174,9 +176,11 @@
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Pickup.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
+    <ClCompile Include="Source\PoopBullet.cpp" />
     <ClCompile Include="Source\Weapon.cpp" />
     <ClCompile Include="Source\Weapon_Gun.cpp" />
     <ClCompile Include="Source\Tween.cpp" />
+    <ClCompile Include="Source\Weapon_Pooper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Readme.md" />

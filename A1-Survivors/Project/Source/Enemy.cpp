@@ -1,19 +1,21 @@
 ﻿#include "Enemy.h"
 #include "Game.h"
 #include "Player.h"
+#include "Pickup.h"
 
 using namespace GameDev2D;
 
-const float Enemy::c_StartingHealth = 1.0f;
-const float Enemy::c_Speed = 0.0f;
+const float Enemy::c_StartingHealth = 2.0f;
+const float Enemy::c_Speed = 42.0f;
 const float Enemy::c_AnimSpeed = 0.3f;
 
 Enemy::Enemy(Game* pGame)
     : GameObject( pGame )
     , m_TweenSize( m_VisibleScale )
     , m_Health( c_StartingHealth )
+    , m_pGame( pGame )
 {
-    m_Radius = 20.0f;
+    m_Radius = 16;
 
     m_pSprites[0] = new Sprite( "fly_anim_f1" );
     m_pSprites[1] = new Sprite( "fly_anim_f2" );
@@ -22,7 +24,7 @@ Enemy::Enemy(Game* pGame)
     {
         m_pSprites[i]->SetAnchor( 0.5f, 0.5f );
         m_pSprites[i]->SetScale( 4.0f, 4.0f );
-    }
+    }  
 
     m_AnimTimer = Math::RandomFloat( 0.0f, c_AnimSpeed );
 }
@@ -64,19 +66,18 @@ void Enemy::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
 
 void Enemy::StartDeathAnim()
 {
-    m_Health = 0.0f;
     m_VisibleScale = 1.0f;
     m_FadingOut = true;
-
+    m_Active = false;
     m_TweenSize.Start( 0.0f, 0.5f, 0.0f, Linear::Interpolation );
 }
 
 void Enemy::ApplyDamage(float damage)
-{
-    m_Health = 0;
-    if( m_Health < 0 )
+{   
+    m_Health -= damage;
+    if (m_Health <= 0)
     {
-        StartDeathAnim();
+    StartDeathAnim();    
     }
 }
 

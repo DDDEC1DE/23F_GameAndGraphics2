@@ -1,38 +1,38 @@
-﻿#include "Weapon_Gun.h"
-#include "Bullet.h"
+﻿#include "Weapon_Pooper.h"
+#include "PoopBullet.h"
 #include "Enemy.h"
 #include "Game.h"
 #include "Player.h"
 
 using namespace GameDev2D;
 
-const int Weapon_Gun::c_NumBullets = 5;
-const int Weapon_Gun::c_BulletDamage = 1;
-const float Weapon_Gun::c_InitialBulletSpawnTime = 0.8f;
-const float Weapon_Gun::c_BulletSpawnTimeDecreasePerLevel = 0.1f;
+const int Weapon_Pooper::c_NumBullets = 15;
+const int Weapon_Pooper::c_BulletDamage = 1000;
+const float Weapon_Pooper::c_InitialBulletSpawnTime = 1.2f;
+const float Weapon_Pooper::c_BulletSpawnTimeDecreasePerLevel = 0.15f;
 
-Weapon_Gun::Weapon_Gun(Game* pGame)
+Weapon_Pooper::Weapon_Pooper(Game* pGame)
     : Weapon( pGame )
 {
     // Fill a vector with bullets.
     for( int i=0; i<c_NumBullets; i++ )
     {
-        Bullet* pBullet = new Bullet( pGame );
+        PoopBullet* pBullet = new PoopBullet( pGame );
         m_Bullets.push_back( pBullet );
     }
 }
 
-Weapon_Gun::~Weapon_Gun()
+Weapon_Pooper::~Weapon_Pooper()
 {
-    for( Bullet* pBullet : m_Bullets )
+    for(PoopBullet* pBullet : m_Bullets )
     {
         delete pBullet;
     }
 }
 
-void Weapon_Gun::Reset()
+void Weapon_Pooper::Reset()
 {
-    for( Bullet* pBullet : m_Bullets )
+    for(PoopBullet* pBullet : m_Bullets )
     {
         pBullet->Reset();
     }
@@ -41,13 +41,16 @@ void Weapon_Gun::Reset()
     m_BulletSpawnTimer = 0;
 }
 
-void Weapon_Gun::OnUpdate(float deltaTime)
+void Weapon_Pooper::OnUpdate(float deltaTime)
 {
-    for( Bullet* pBullet : m_Bullets )
+    for(PoopBullet* pBullet : m_Bullets )
     {
         if( pBullet->IsActive() )
         {
+            if (stop == false)
+            {
             pBullet->OnUpdate( deltaTime );
+            }
         }
     }
 
@@ -62,9 +65,9 @@ void Weapon_Gun::OnUpdate(float deltaTime)
     }
 }
 
-void Weapon_Gun::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
+void Weapon_Pooper::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
 {
-    for( Bullet* pBullet : m_Bullets )
+    for(PoopBullet* pBullet : m_Bullets )
     {
         if( pBullet->IsActive() )
         {
@@ -73,7 +76,7 @@ void Weapon_Gun::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
     }
 }
 
-void Weapon_Gun::HandleCollisions(EnemyList& enemyList)
+void Weapon_Pooper::HandleCollisions(EnemyList& enemyList)
 {
     // Bullets hitting enemies.
     for( int b=0; b<c_NumBullets; b++ )
@@ -109,9 +112,13 @@ void Weapon_Gun::HandleCollisions(EnemyList& enemyList)
     }
 }
 
-void Weapon_Gun::SpawnBullet(Vector2 pos)
+void Weapon_Pooper::HideBullets()
 {
-    Bullet* pBullet = nullptr;
+}
+
+void Weapon_Pooper::SpawnBullet(Vector2 pos)
+{
+    PoopBullet* pBullet = nullptr;
 
     // Find the first inactive Bullet.
     for( int i=0; i<c_NumBullets; i++ )
@@ -134,27 +141,31 @@ void Weapon_Gun::SpawnBullet(Vector2 pos)
             pBullet->SetPosition( pos );
 
             Vector2 enemyPos = nearestEnemy->GetPosition();
+
+
             Vector2 dir = (enemyPos - playerPos).Normalized();
             pBullet->SetDirection( dir );
-            pBullet;
+
+
+            Vector2 controlpoint = Vector2::Zero;
+            Vector2 midPoint = (pos + enemyPos) * 0.5f;
+            Vector2 orthoDir(-dir.y, dir.x);    
+            float distance = (enemyPos - pos).Length();
+            float height = distance * 0.2f; 
+            controlpoint = midPoint + orthoDir * height;
+
+            pBullet->SetVariables(pos, controlpoint, enemyPos);
+
         }
     }
 }
 
-void Weapon_Gun::ColissionCheck()
+void Weapon_Pooper::ColissionCheck()
 {
 
 }
 
-void Weapon_Gun::LevelUp()
+void Weapon_Pooper::LevelUp()
 {
     m_CurrentBulletSpawnTime -= c_BulletSpawnTimeDecreasePerLevel;
-}
-
-void Weapon_Gun::HideBullets()
-{
-    for (Bullet* pBullet : m_Bullets)
-    {
-        pBullet->HideBullet();
-    }
 }

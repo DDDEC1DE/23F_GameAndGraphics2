@@ -24,20 +24,19 @@ public:
     bool IsFadingOut() { return m_FadingOut; }
 
     // Getters.
+    Vector2 GetSpritePos() { return m_pSprites[m_CurrentFrame]->GetPosition(); }
     float GetHealth() { return m_Health; }
 
     // Setters.
     void ApplyDamage(float damage);
     void SetHealth(float health) { m_Health = health; }
     void SetActive(bool active) override;
-
 private:
-    float m_Health = 0.0f;
-
+    float m_Health;
+    Game* m_pGame = nullptr;
     Sprite* m_pSprites[2] = {};
     float m_AnimTimer = 0;
     int m_CurrentFrame = 0;
-
     bool m_FadingOut = false;
 
     float m_VisibleScale = 0.0f;

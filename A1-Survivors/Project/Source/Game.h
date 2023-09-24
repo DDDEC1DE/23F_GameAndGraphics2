@@ -47,12 +47,12 @@ public:
 
 private:
     SpriteFont m_Font;
-
+    bool FoundClosestEnemy = false;
     bool m_GameOver = false;
     int m_EnemiesKilled = 0;
     int m_ExperiencePoints = 0;
     float m_TimePlayed = 0.0f;
-
+    int currentWeaponIndex = 0;
     int m_CurrentXPRequiredToLevelUp = 0;
     float m_EnemySpawnTimer = 0.0f;
 

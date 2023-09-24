@@ -19,6 +19,7 @@ public:
     virtual void OnRender(BatchRenderer& batchRenderer, bool drawDebugData) = 0;
     virtual void HandleCollisions(EnemyList& enemyList) = 0;
     virtual void LevelUp() = 0;
+    virtual void HideBullets() = 0;
 
 protected:
     Game* m_pGame = nullptr;

@@ -349,6 +349,12 @@
     <ClInclude Include="Source\Types.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Weapon_Pooper.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PoopBullet.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\GameDev2D\Source\Libraries\stb_image\stb_image.cpp">
@@ -535,6 +541,12 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\Bullet.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Weapon_Pooper.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PoopBullet.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
