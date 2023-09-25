@@ -22,7 +22,7 @@ public:
 
     void StartDeathAnim();
     bool IsFadingOut() { return m_FadingOut; }
-
+    void Reset() override; 
     // Getters.
     Vector2 GetSpritePos() { return m_pSprites[m_CurrentFrame]->GetPosition(); }
     float GetHealth() { return m_Health; }
@@ -31,6 +31,7 @@ public:
     void ApplyDamage(float damage);
     void SetHealth(float health) { m_Health = health; }
     void SetActive(bool active) override;
+
 private:
     float m_Health;
     Game* m_pGame = nullptr;

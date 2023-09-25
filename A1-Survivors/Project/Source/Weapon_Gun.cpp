@@ -8,8 +8,8 @@ using namespace GameDev2D;
 
 const int Weapon_Gun::c_NumBullets = 5;
 const int Weapon_Gun::c_BulletDamage = 1;
-const float Weapon_Gun::c_InitialBulletSpawnTime = 0.8f;
-const float Weapon_Gun::c_BulletSpawnTimeDecreasePerLevel = 0.1f;
+const float Weapon_Gun::c_InitialBulletSpawnTime = 0.7f;
+const float Weapon_Gun::c_BulletSpawnTimeDecreasePerLevel = 0.05f;
 
 Weapon_Gun::Weapon_Gun(Game* pGame)
     : Weapon( pGame )
@@ -100,7 +100,7 @@ void Weapon_Gun::HandleCollisions(EnemyList& enemyList)
                     {
                         enemyList[e]->ApplyDamage(c_BulletDamage);
                         m_Bullets[b]->SetActive(false);
-                        m_pGame->OnEnemyKilled(EnemyContactPoint);
+                       
                     }
 
                 }        

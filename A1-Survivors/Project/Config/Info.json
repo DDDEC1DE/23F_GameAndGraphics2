@@ -20,7 +20,7 @@
   },
 
   "debug": {
-    "drawFps": false,
+    "drawFps": true,
     "drawElapsed": false,
     "drawDelta": false,
     "drawTotalDrawCalls": false,

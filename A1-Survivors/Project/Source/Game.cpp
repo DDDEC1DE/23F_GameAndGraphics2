@@ -5,7 +5,7 @@
 #include "Weapon_Pooper.h"
 #include "Weapon_Gun.h"
 
-const int Game::c_NumEnemies = 10;
+const int Game::c_NumEnemies = 16;
 const int Game::c_NumPickups = 300;
 const int Game::c_InitialXPRequiredToLevelUp = 10;
 const float Game::c_XPMultiplierPerLevel = 1.5f;
@@ -34,7 +34,12 @@ Game::Game()
         Pickup* pPickup = new Pickup(this);
         m_Pickups.push_back(pPickup);
     }
-
+    for (int i = 0; i < c_NumEnemies; i++)
+    {
+        Enemy* pEnemy = new Enemy(this);
+        pEnemy->SetActive(false);
+        m_Enemies.push_back(pEnemy);
+    }
     Reset();
 }
 
@@ -89,18 +94,13 @@ void Game::Reset()
     m_pPlayer->SetPosition(Vector2(GameDev2D::GetScreenWidth() / 2.0f, GameDev2D::GetScreenHeight() / 2.0f));
 
 
-    for (int i = 0; i < c_NumEnemies; i++)
+    for (int i = 0; i < 10; i++)
     {
-        Enemy* pEnemy = new Enemy(this);
-        pEnemy->SetActive(false);
-        m_Enemies.push_back(pEnemy);
+        SpawnEnemies();
     }
-    //// HACK: Manually spawning 2 enemies for testing:
-    //m_Enemies[0]->SetActive(true);
-    //m_Enemies[0]->SetPosition(Vector2(100.0f, 100.0f));
-    //m_Enemies[1]->SetActive(true);
-    //m_Enemies[1]->SetPosition(Vector2(100.0f, 150.0f));
-    SpawnEnemies();
+
+
+
 }
 
 void Game::OnUpdate(float deltaTime)
@@ -114,49 +114,49 @@ void Game::OnUpdate(float deltaTime)
     if (m_GameOver == false)
     {
         m_pPlayer->OnUpdate(deltaTime);
-    }
-
-   
-   m_Weapons[currentWeaponIndex]->OnUpdate(deltaTime);
-   m_Weapons[currentWeaponIndex]->HandleCollisions(m_Enemies);
 
 
-    for (Enemy* pEnemy : m_Enemies)
-    {
-        if (pEnemy->IsActive())
+        m_Weapons[currentWeaponIndex]->OnUpdate(deltaTime);
+        m_Weapons[currentWeaponIndex]->HandleCollisions(m_Enemies);
+
+
+        for (Enemy* pEnemy : m_Enemies)
         {
-            pEnemy->OnUpdate(deltaTime);
-        }
-    }
+            if (pEnemy->IsActive())
+            {
 
-    for (Pickup* pPickup : m_Pickups)
-    {
-        if (pPickup->IsActive())
+                pEnemy->OnUpdate(deltaTime);
+            }
+        }
+
+        for (Pickup* pPickup : m_Pickups)
         {
-            pPickup->OnUpdate(deltaTime);
+            if (pPickup->IsActive())
+            {
+                pPickup->OnUpdate(deltaTime);
+            }
         }
-    }
 
-    // Update timers and spawn objects if needed.
-    if (m_GameOver == false)
-    {
+        // Update timers and spawn objects if needed.
+
         m_EnemySpawnTimer -= deltaTime;
         if (m_EnemySpawnTimer < 0)
         {
             m_EnemySpawnTimer = c_InitialEnemySpawnTime;
             SpawnEnemies();
         }
+
+
+
+
+        GetClosestEnemy(m_pPlayer->GetPosition());
+
+        // Handle collisions.
+        HandleCollisions();
+
+        // Handle xp, leveling up and weapon upgrades.
+        HandleXP();
     }
-
-
-
-    GetClosestEnemy(m_pPlayer->GetPosition());
-
-    // Handle collisions.
-    HandleCollisions();
-
-    // Handle xp, leveling up and weapon upgrades.
-    HandleXP();
 }
 
 void Game::OnRender(BatchRenderer& batchRenderer)
@@ -176,7 +176,7 @@ void Game::OnRender(BatchRenderer& batchRenderer)
 
     for (Weapon* pWeapon : m_Weapons)
     {
-         pWeapon->OnRender(batchRenderer, m_DrawDebugData);
+        pWeapon->OnRender(batchRenderer, m_DrawDebugData);
     }
 
 
@@ -215,7 +215,7 @@ void Game::OnRender(BatchRenderer& batchRenderer)
 
 
 
-        sprintf_s(tempString, 100, "1- Poop flinger \n 2 - Pickle shooter");
+        sprintf_s(tempString, 100, "1 - Poop flinger \n2 - Pickle shooter");
         m_Font.SetText(tempString);
         m_Font.SetPosition(800, 650);
         batchRenderer.RenderSpriteFont(m_Font);
@@ -271,29 +271,28 @@ void Game::OnMouseMovedEvent(float mouseX, float mouseY)
 
 void Game::SpawnEnemies()
 {
-    for (int i = 0; i < 10; i++)
-    {
-        int side = Math::RandomInt(0, 3);
-        Vector2 pos;
-        if (side == 0) // Left
-        {
-            pos = Vector2(Math::RandomFloat(-264, -64), Math::RandomFloat(0, 704));
-        }
-        else if (side == 1) // Right
-        {
-            pos = Vector2(Math::RandomFloat(1280, 1480), Math::RandomFloat(0, 704));
-        }
-        else if (side == 2) // Top
-        {
-            pos = Vector2(Math::RandomFloat(0, 1280), Math::RandomFloat(704, 904));
-        }
-        else if (side == 3) // Bottom
-        {
-            pos = Vector2(Math::RandomFloat(0, 1280), Math::RandomFloat(-264, -64));
-        }
 
-        SpawnEnemy(pos);
+    int side = Math::RandomInt(0, 3);
+    Vector2 pos;
+    if (side == 0) // Left
+    {
+        pos = Vector2(Math::RandomFloat(-264, -64), Math::RandomFloat(0, 704));
     }
+    else if (side == 1) // Right
+    {
+        pos = Vector2(Math::RandomFloat(1280, 1480), Math::RandomFloat(0, 704));
+    }
+    else if (side == 2) // Top
+    {
+        pos = Vector2(Math::RandomFloat(0, 1280), Math::RandomFloat(704, 904));
+    }
+    else if (side == 3) // Bottom
+    {
+        pos = Vector2(Math::RandomFloat(0, 1280), Math::RandomFloat(-264, -64));
+    }
+
+    SpawnEnemy(pos);
+
 }
 
 void Game::SpawnEnemy(Vector2 pos)
@@ -305,18 +304,17 @@ void Game::SpawnEnemy(Vector2 pos)
 
     if (m_Enemies.size() > 0)
     {
+        bool AddEnemy = true;
         for (int i = 0; i < m_Enemies.size(); i++)
         {
             if (m_Enemies[i]->IsActive() == false)
             {
                 m_Enemies[i] = pEnemy;
+                AddEnemy = false;
                 break;
             }
-            else
-            {
-
-            }
         }
+        //m_Enemies.push_back(pEnemy);
     }
     else
     {
@@ -331,8 +329,6 @@ void Game::SpawnPickup(Vector2 pos)
 
     pPickup->SetActive(true);
     pPickup->SetPosition(pos);
-    // Find the first inactive Enemy.
-
     if (m_Pickups.size() > 0)
     {
         for (int i = 0; i < m_Pickups.size(); i++)
@@ -342,25 +338,12 @@ void Game::SpawnPickup(Vector2 pos)
                 m_Pickups[i] = pPickup;
                 break;
             }
-            else
-            {
-
-            }
         }
     }
     else
     {
         m_Pickups.push_back(pPickup);
     }
-    // Find the first inactive Pickup.
-    /*for (int i = 0; i < c_NumPickups; i++)
-    {
-        if (m_Pickups[i]->IsActive() == false)
-        {
-            pPickup = m_Pickups[i];
-            break;
-        }
-    }*/
 }
 
 void Game::HandleCollisions()
@@ -376,8 +359,26 @@ void Game::HandleCollisions()
     {
         if (m_Enemies[e]->IsActive() && !m_Enemies[e]->IsFadingOut())
         {
-            Vector2 enemyPos = m_Enemies[e]->GetPosition();
-            float enemyRadius = m_Enemies[e]->GetRadius();
+            Vector2 EnemyPos = m_Enemies[e]->GetSpritePos();
+            float EnemyRadius = m_Enemies[e]->GetRadius();
+
+
+            Vector2 PlayerPos = m_pPlayer->GetPosition();
+            Vector2 PlayerToEnemyDir = (PlayerPos - EnemyPos).Normalized();
+            Vector2 EnemyToPlayerDir = (EnemyPos - m_pPlayer->GetPosition()).Normalized();
+            float Playerhalfradius = m_pPlayer->GetRadius() / 2;
+            float Enemyhalfradius = EnemyRadius / 2;
+            Vector2 EnemyContactPoint = EnemyPos - (Enemyhalfradius * EnemyToPlayerDir);
+            Vector2 PlayerContactPoint = PlayerPos - (Playerhalfradius * PlayerToEnemyDir);
+            float distance = EnemyContactPoint.DistanceSquared(PlayerContactPoint);
+            if (distance <= pow(EnemyRadius + Playerhalfradius * 2, 2))
+            {
+                m_pPlayer->SetActive(false);
+                m_GameOver = true;
+            }
+
+
+
         }
     }
 
@@ -418,6 +419,7 @@ void Game::HandleXP()
 
 void Game::OnEnemyKilled(Vector2 location)
 {
+    SpawnEnemies();
     SpawnPickup(location);
     m_EnemiesKilled++;
 }

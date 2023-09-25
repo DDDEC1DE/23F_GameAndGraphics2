@@ -22,7 +22,7 @@ public:
     Vector2 GetSpritePosition() { return m_pSprite->GetPosition(); }
     // Setters.
     void SetDirection(Vector2 dir) { m_Direction = dir; }
-
+    void Reset() override;
     virtual void OnRender(BatchRenderer& batchRenderer, bool drawDebugData) override;
 private:
     float m_t = 0;

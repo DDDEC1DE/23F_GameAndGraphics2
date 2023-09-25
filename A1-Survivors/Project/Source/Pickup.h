@@ -18,7 +18,7 @@ public:
 
     virtual void OnUpdate(float deltaTime) override;
     virtual void OnRender(BatchRenderer& batchRenderer, bool drawDebugData) override;
-
+    void Reset() override;
     void PickupObject(Vector2 destPos);
     bool IsAnimating() { return m_Animating; }
 

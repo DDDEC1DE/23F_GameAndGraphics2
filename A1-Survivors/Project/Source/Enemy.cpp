@@ -9,6 +9,7 @@ const float Enemy::c_StartingHealth = 2.0f;
 const float Enemy::c_Speed = 42.0f;
 const float Enemy::c_AnimSpeed = 0.3f;
 
+
 Enemy::Enemy(Game* pGame)
     : GameObject( pGame )
     , m_TweenSize( m_VisibleScale )
@@ -54,6 +55,15 @@ void Enemy::OnUpdate(float deltaTime)
     m_Position += velocity * deltaTime;
 
     // Update animation.
+    if (m_AnimTimer >= c_AnimSpeed && m_AnimTimer <= c_AnimSpeed *2)
+    {
+        m_CurrentFrame = 1;
+    }
+    else if (m_AnimTimer >= c_AnimSpeed * 2)
+    {
+        m_CurrentFrame = 0;
+        m_AnimTimer = 0;
+    }
     m_AnimTimer += deltaTime;
 }
 
@@ -66,10 +76,16 @@ void Enemy::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
 
 void Enemy::StartDeathAnim()
 {
+    m_pGame->OnEnemyKilled(m_Position);
     m_VisibleScale = 1.0f;
     m_FadingOut = true;
     m_Active = false;
     m_TweenSize.Start( 0.0f, 0.5f, 0.0f, Linear::Interpolation );
+}
+
+void Enemy::Reset()
+{
+    m_Active = false;
 }
 
 void Enemy::ApplyDamage(float damage)
@@ -77,6 +93,7 @@ void Enemy::ApplyDamage(float damage)
     m_Health -= damage;
     if (m_Health <= 0)
     {
+
     StartDeathAnim();    
     }
 }

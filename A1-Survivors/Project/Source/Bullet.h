@@ -16,7 +16,7 @@ public:
     virtual ~Bullet();
     void HideBullet();
     virtual void OnUpdate(float deltaTime) override;
-
+    void Reset() override;
     // Getters.
     Vector2 GetDirection() { return m_Direction; }
     Vector2 GetSpritePosition() { return m_pSprite->GetPosition(); }

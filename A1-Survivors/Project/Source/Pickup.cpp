@@ -42,6 +42,11 @@ void Pickup::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
     batchRenderer.RenderCircle(m_Position, m_Radius / 2, c_Color, ColorList::Black, 2);
 }
 
+void Pickup::Reset()
+{
+    SetActive(false);
+}
+
 void Pickup::PickupObject(Vector2 destPos)
 {
     m_Animating = true;

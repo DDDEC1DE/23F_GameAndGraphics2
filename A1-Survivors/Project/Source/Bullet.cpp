@@ -42,6 +42,11 @@ void Bullet::OnUpdate(float deltaTime)
 
 }
 
+void Bullet::Reset()
+{
+       SetActive(false);
+}
+
 void Bullet::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
 {
     m_pSprite->SetPosition(m_Position);

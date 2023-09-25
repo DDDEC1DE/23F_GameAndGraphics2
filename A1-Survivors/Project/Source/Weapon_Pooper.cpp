@@ -8,7 +8,7 @@ using namespace GameDev2D;
 
 const int Weapon_Pooper::c_NumBullets = 15;
 const int Weapon_Pooper::c_BulletDamage = 1000;
-const float Weapon_Pooper::c_InitialBulletSpawnTime = 1.2f;
+const float Weapon_Pooper::c_InitialBulletSpawnTime = 2.0f;
 const float Weapon_Pooper::c_BulletSpawnTimeDecreasePerLevel = 0.15f;
 
 Weapon_Pooper::Weapon_Pooper(Game* pGame)
@@ -38,7 +38,7 @@ void Weapon_Pooper::Reset()
     }
 
     m_CurrentBulletSpawnTime = c_InitialBulletSpawnTime;
-    m_BulletSpawnTimer = 0;
+    m_BulletSpawnTimer = c_InitialBulletSpawnTime;
 }
 
 void Weapon_Pooper::OnUpdate(float deltaTime)
@@ -103,7 +103,7 @@ void Weapon_Pooper::HandleCollisions(EnemyList& enemyList)
                     {
                         enemyList[e]->ApplyDamage(c_BulletDamage);
                         m_Bullets[b]->SetActive(false);
-                        m_pGame->OnEnemyKilled(EnemyContactPoint);
+                       
                     }
 
                 }        
@@ -114,6 +114,10 @@ void Weapon_Pooper::HandleCollisions(EnemyList& enemyList)
 
 void Weapon_Pooper::HideBullets()
 {
+    for (PoopBullet* pBullet : m_Bullets)
+    {
+        pBullet->SetActive(false);
+    }
 }
 
 void Weapon_Pooper::SpawnBullet(Vector2 pos)

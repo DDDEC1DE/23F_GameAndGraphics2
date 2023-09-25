@@ -58,6 +58,11 @@ void PoopBullet::SetVariables(Vector2 StartingPoint, Vector2 ControlPoint, Vecto
     m_t = 0;
 }
 
+void PoopBullet::Reset()
+{
+       SetActive(false);
+}
+
 void PoopBullet::OnRender(BatchRenderer& batchRenderer, bool drawDebugData)
 {
     m_pSprite->SetPosition(m_Position);

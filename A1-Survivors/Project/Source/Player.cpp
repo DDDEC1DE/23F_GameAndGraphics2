@@ -86,4 +86,5 @@ void Player::OnMouseMovedEvent(float mouseX, float mouseY)
 
 void Player::HandleCollision(Vector2 collisionPoint, Vector2 collisionNormal)
 {
+
 }
