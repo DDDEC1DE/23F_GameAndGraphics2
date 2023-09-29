@@ -1,1 +1,0 @@
-start obsidian://open?path=.
