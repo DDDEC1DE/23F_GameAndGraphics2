@@ -24,8 +24,8 @@
     <ClInclude Include="Source\GameSurvivors.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Data\Shaders\Basic.vert" />
-    <None Include="Source\Data\Shaders\White.frag" />
+    <None Include="Data\Shaders\Basic.vert" />
+    <None Include="Data\Shaders\White.frag" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

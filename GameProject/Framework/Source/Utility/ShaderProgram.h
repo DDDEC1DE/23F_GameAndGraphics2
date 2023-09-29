@@ -11,6 +11,8 @@ namespace fw {
 
         GLuint GetProgram() { return m_Program; }
 
+        void SetUniform2f(const char* uniformName, vec2 value);
+
     protected:
         void Cleanup();
 

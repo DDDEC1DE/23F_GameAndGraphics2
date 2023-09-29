@@ -1,8 +1,11 @@
 #pragma once
 
 #include "CoreHeaders.h"
+#include "Math/vec2.h"
 
 namespace fw {
+
+    class ShaderProgram;
 
     class Mesh
     {
@@ -13,7 +16,7 @@ namespace fw {
         virtual ~Mesh();
 
         void Create(std::vector<float>& verts, GLenum primitiveType);
-        void Draw();
+        void Draw(ShaderProgram*pShader, vec2 offset);
 
     protected:
         GLuint m_VBO = 0;

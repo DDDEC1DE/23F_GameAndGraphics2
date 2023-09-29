@@ -31,10 +31,13 @@ namespace fw {
 		glBufferData(GL_ARRAY_BUFFER, sizeof(float) * verts.size(), verts.data(), GL_STATIC_DRAW);
 	}
 
-	void Mesh::Draw()
+	void Mesh::Draw(ShaderProgram* pShader, vec2 offset)
 	{
-		// Set this VBO to be the currently active one.
-		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+		// Enable our shader.
+		glUseProgram(pShader->GetProgram());
+
+		//Set our uniforms.
+		pShader->SetUniform2f("u_Offset", offset);
 
 		// Get the attribute variable’s location from the shader.
 		// The shader part is commented out here, we'll discuss that later.

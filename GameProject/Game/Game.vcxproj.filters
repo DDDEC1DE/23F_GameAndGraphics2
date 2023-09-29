@@ -4,6 +4,12 @@
     <Filter Include="Source">
       <UniqueIdentifier>{752151e8-9865-46ec-8a11-12eb10f71741}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{bf4a9989-2d17-4241-8f61-0ba1a982fa6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Shaders">
+      <UniqueIdentifier>{76f26f66-3c42-4236-98ba-c36a3320dba8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -22,7 +28,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Data\Shaders\Basic.vert" />
-    <None Include="Source\Data\Shaders\White.frag" />
+    <None Include="Data\Shaders\White.frag">
+      <Filter>Data\Shaders</Filter>
+    </None>
+    <None Include="Data\Shaders\Basic.vert">
+      <Filter>Data\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

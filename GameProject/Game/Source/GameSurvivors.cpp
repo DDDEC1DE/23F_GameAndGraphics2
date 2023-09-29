@@ -16,15 +16,14 @@ GameSurvivors::GameSurvivors(fw::FWCore* m_pFW) : fw::GameCore(m_pFW)
 
 void GameSurvivors::OnKeyDown(int keyCode)
 {
-	if (keyCode == 'W' || keyCode == VK_UP)
+	if (keyCode == VK_F1)
 	{
+		wglSwapInterval(1);
 	}
 
-	if (keyCode == VK_SPACE ||
-		keyCode == ' ' ||
-		keyCode == 32)
+	if (keyCode ==VK_F2)
 	{
-		m_MeshIsVisible = false;
+		wglSwapInterval(0);
 	}
 }
 
@@ -43,9 +42,9 @@ void GameSurvivors::Draw()
 
 	if (m_MeshIsVisible)
 	{
-		glUseProgram(m_pWhiteShader->GetProgram());
 		m_LinesMesh.Draw();
 	}
+
 
 	m_pFW->SwapBuffers();
 }
