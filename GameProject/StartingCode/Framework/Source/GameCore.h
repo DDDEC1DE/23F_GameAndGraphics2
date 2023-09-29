@@ -9,7 +9,8 @@ namespace fw {
 	{
 	public:
 		GameCore(FWCore* m_pFW);
-
+		virtual void OnKeyDown(int keyCode) = 0;
+		virtual void OnKeyUp(int keyCode) = 0;
 		virtual void Update() = 0;
 		virtual void Draw() = 0;
 

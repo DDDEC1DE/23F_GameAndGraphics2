@@ -20,7 +20,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\DataTypes.h" />
     <ClInclude Include="Source\GameSurvivors.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Data\Shaders\Basic.vert" />
+    <None Include="Source\Data\Shaders\White.frag" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

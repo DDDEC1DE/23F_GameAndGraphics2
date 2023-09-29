@@ -4,14 +4,16 @@
 class GameSurvivors : public fw::GameCore
 {
 public:
-	GameSurvivors(fw::FWCore* m_pFW);
-
-	virtual void Update() override;
-	virtual void Draw() override;
-	
+	GameSurvivors(fw::FWCore* pFW);
 	virtual ~GameSurvivors();
 
-private:
+	virtual void OnKeyDown(int keyCode) override;
+	virtual void OnKeyUp(int keyCode) override;
+	virtual void Update() override;
+	virtual void Draw() override;
 
+protected:
+	fw::ShaderProgram* m_pWhiteShader = nullptr;
+	fw::Mesh m_LinesMesh;
+	bool m_MeshIsVisible = true;
 };
-
