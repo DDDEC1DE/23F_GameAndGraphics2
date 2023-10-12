@@ -2,7 +2,10 @@
 
 namespace fw {
 
-    void OutputMessage(const char* message, ...);
-    char* LoadCompleteFile(const char* filename, long* length);
+double GetHighPrecisionTime();
+double GetHighPrecisionTimeSinceGameStarted();
+
+void OutputMessage(const char* message, ...);
+char* LoadCompleteFile(const char* filename, long* length);
 
 }

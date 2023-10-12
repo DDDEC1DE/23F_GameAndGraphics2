@@ -1,19 +1,16 @@
 #include "CoreHeaders.h"
 
-#include "Framework.h"
+#include "GameCore.h"
 
 namespace fw {
 
-	GameCore::GameCore(FWCore* pFW)
-		:  m_pFW(pFW)
-	{
-	}
+GameCore::GameCore(FWCore* pFW)
+	: m_pFW( pFW )
+{
+}
 
-	GameCore::~GameCore()
-	{
-
-	}
-
+GameCore::~GameCore()
+{
+}
 
 } // namespace fw
-

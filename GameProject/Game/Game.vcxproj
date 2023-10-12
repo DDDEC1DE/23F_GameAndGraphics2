@@ -13,6 +13,8 @@
   <ItemGroup>
     <ClCompile Include="Source\GameSurvivors.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Slot.cpp" />
+    <ClCompile Include="Source\TicTacToe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.vcxproj">
@@ -22,6 +24,8 @@
   <ItemGroup>
     <ClInclude Include="Source\DataTypes.h" />
     <ClInclude Include="Source\GameSurvivors.h" />
+    <ClInclude Include="Source\Slot.h" />
+    <ClInclude Include="Source\TicTacToe.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Shaders\Basic.vert" />

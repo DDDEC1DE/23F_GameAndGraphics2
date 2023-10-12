@@ -82,7 +82,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Source\CoreHeaders.h" />
     <ClInclude Include="Source\Framework.h" />
     <ClInclude Include="Source\FWCore.h" />
@@ -105,13 +104,9 @@
     <ClCompile Include="Source\GL\GLExtensions.cpp" />
     <ClCompile Include="Source\GL\MyGLContext.cpp" />
     <ClCompile Include="Source\GL\WGLExtensions.cpp" />
-    <ClCompile Include="Source\Math\vec2.cpp" />
-    <ClCompile Include="Source\Mech.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
     <ClCompile Include="Source\Utility\ShaderProgram.cpp" />
     <ClCompile Include="Source\Utility\Utility.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Framework.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

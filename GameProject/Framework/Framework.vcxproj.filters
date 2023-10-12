@@ -8,10 +8,10 @@
       <UniqueIdentifier>{d4bb819d-2c10-4b22-a84b-7d2ad0261f11}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Utility">
-      <UniqueIdentifier>{f6528607-c048-4b4e-aef9-b812d04f694d}</UniqueIdentifier>
+      <UniqueIdentifier>{5fe8f2c3-b371-4841-b720-a4a576eb24df}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\Math">
-      <UniqueIdentifier>{70cff520-c2fa-44b9-a0e1-ee67ffd8c866}</UniqueIdentifier>
+      <UniqueIdentifier>{ea01aded-3135-49d4-83c6-c3295bb925c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,7 +42,6 @@
     <ClInclude Include="Source\FWWindows.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Source\GameCore.h">
       <Filter>Source</Filter>
     </ClInclude>
@@ -78,7 +77,7 @@
     <ClCompile Include="Source\GameCore.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mech.cpp">
+    <ClCompile Include="Source\Mesh.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\Utility\ShaderProgram.cpp">
@@ -87,11 +86,5 @@
     <ClCompile Include="Source\Utility\Utility.cpp">
       <Filter>Source\Utility</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Math\vec2.cpp">
-      <Filter>Source\Math</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Framework.rc" />
   </ItemGroup>
 </Project>

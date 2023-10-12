@@ -9,7 +9,7 @@ public:
 
 	virtual void OnKeyDown(int keyCode) override;
 	virtual void OnKeyUp(int keyCode) override;
-	virtual void Update() override;
+	virtual void Update(float deltaTime) override;
 	virtual void Draw() override;
 
 protected:

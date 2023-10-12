@@ -20,7 +20,7 @@ public:
     FWCore(int width, int height);
     virtual ~FWCore();
 
-    virtual int Run(GameCore* game) = 0;
+    virtual int Run(GameCore* pGame) = 0;
 
     virtual void SetWindowSize(int width, int height) = 0;
     virtual unsigned int GetWindowWidth() { return m_WindowWidth; }

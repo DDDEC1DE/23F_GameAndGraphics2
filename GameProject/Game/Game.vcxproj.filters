@@ -5,10 +5,10 @@
       <UniqueIdentifier>{752151e8-9865-46ec-8a11-12eb10f71741}</UniqueIdentifier>
     </Filter>
     <Filter Include="Data">
-      <UniqueIdentifier>{bf4a9989-2d17-4241-8f61-0ba1a982fa6e}</UniqueIdentifier>
+      <UniqueIdentifier>{e86c0217-1e08-47d9-87ab-f380810e0eef}</UniqueIdentifier>
     </Filter>
     <Filter Include="Data\Shaders">
-      <UniqueIdentifier>{76f26f66-3c42-4236-98ba-c36a3320dba8}</UniqueIdentifier>
+      <UniqueIdentifier>{baf660a8-7ef9-4695-867c-c793ea6dfcd4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -16,6 +16,12 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\GameSurvivors.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TicTacToe.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Slot.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,12 +32,18 @@
     <ClInclude Include="Source\DataTypes.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\TicTacToe.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Slot.h">
+      <Filter>Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\Shaders\White.frag">
+    <None Include="Data\Shaders\Basic.vert">
       <Filter>Data\Shaders</Filter>
     </None>
-    <None Include="Data\Shaders\Basic.vert">
+    <None Include="Data\Shaders\White.frag">
       <Filter>Data\Shaders</Filter>
     </None>
   </ItemGroup>
