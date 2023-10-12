@@ -57,11 +57,7 @@ public:
 	intvec2() {}
 	intvec2(int nx, int ny) : x(nx), y(ny) {}
 
-	intvec2 operator+(intvec2 o) {
-
-
-		return intvec2(x + o.x, y + o.y);
-	}
+	intvec2 operator+(intvec2 o) { return intvec2(x + o.x, y + o.y); }
 	intvec2 operator-(intvec2 o) { return intvec2(x - o.x, y - o.y); }
 
 	intvec2 operator*(int o) { return intvec2(x * o, y * o); }
