@@ -82,10 +82,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\CoreHeaders.h" />
     <ClInclude Include="Source\Framework.h" />
     <ClInclude Include="Source\FWCore.h" />
     <ClInclude Include="Source\FWWindows.h" />
+    <ClInclude Include="Source\Game.h" />
     <ClInclude Include="Source\GameCore.h" />
     <ClInclude Include="Source\GL\glext.h" />
     <ClInclude Include="Source\GL\GLExtensions.h" />
@@ -98,8 +100,10 @@
     <ClInclude Include="Source\Utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\FWCore.cpp" />
     <ClCompile Include="Source\FWWindows.cpp" />
+    <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\GameCore.cpp" />
     <ClCompile Include="Source\GL\GLExtensions.cpp" />
     <ClCompile Include="Source\GL\MyGLContext.cpp" />

@@ -24,6 +24,9 @@
     <ClCompile Include="Source\Slot.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameSurvivors.h">
@@ -36,6 +39,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\Slot.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
