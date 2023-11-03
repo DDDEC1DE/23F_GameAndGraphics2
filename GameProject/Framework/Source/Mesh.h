@@ -7,6 +7,11 @@ namespace fw {
 
 class ShaderProgram;
 
+struct VertexFormat
+{
+    float position[2];
+    float uv[2];
+};
 class Mesh
 {
 public:
@@ -15,10 +20,10 @@ public:
     Mesh& operator=(const Mesh& other) = delete;
     virtual ~Mesh();
 
-    void Create(std::vector<float>& verts, GLenum primitiveType);
+    void Create(const std::vector<VertexFormat>& verts, GLenum primitiveType);
     void Draw(ShaderProgram* pShader, vec2 offset);
 
-protected:
+
     GLuint m_VBO = 0;
     int m_NumVerts = 0;
     GLenum m_PrimitiveType = GL_POINTS;
