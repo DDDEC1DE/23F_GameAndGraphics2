@@ -14,3 +14,5 @@
 #include "Math/vec2.h"
 #include "Utility/ShaderProgram.h"
 #include "Utility/Utility.h"
+#include "Camera/Camera.h"
+#include "GameObject/GameObject.h"

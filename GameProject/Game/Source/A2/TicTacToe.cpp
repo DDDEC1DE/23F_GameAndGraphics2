@@ -3,8 +3,7 @@
 
 
 
-TicTacToe::TicTacToe(fw::FWCore* pFW) : 
-    fw::GameCore(pFW),
+TicTacToe::TicTacToe(fw::FWCore* pFW) : fw::GameCore(pFW),
     gen(rd()),
     dist(5, 95),
     timer(TimeBetweenAnimations),
@@ -16,7 +15,7 @@ TicTacToe::TicTacToe(fw::FWCore* pFW) :
     m_pFW = pFW;
 
     m_pWhiteShader = new fw::ShaderProgram("Data/Shaders/Basic.vert", "Data/Shaders/White.frag");
-
+    cam = new fw::Camera(vec2(0,0), 1.0f);
     boardVerts = {
             33, 0,
             33, 100,
@@ -68,6 +67,7 @@ TicTacToe::~TicTacToe()
 {
     delete m_pWhiteShader;
     delete m_pBoardMesh;
+    delete cam;
     for (fw::Mesh* oMesh : oMeshes)
     {
         delete oMesh;
@@ -131,18 +131,18 @@ void TicTacToe::Draw()
 
     if (m_MeshIsVisible)
     {
-        m_pBoardMesh->Draw(m_pWhiteShader, vec2(0, 0));
+        m_pBoardMesh->Draw(m_pWhiteShader, cam,  vec2(0, 0));
         for (fw::Mesh* oMesh : oMeshes)
         {
-            oMesh->Draw(m_pWhiteShader, vec2(0, 0));
+            oMesh->Draw(m_pWhiteShader, cam, vec2(0, 0));
         }
         for (fw::Mesh* xMesh : xMeshes)
         {
-            xMesh->Draw(m_pWhiteShader, vec2(0, 0));
+            xMesh->Draw(m_pWhiteShader, cam, vec2(0, 0));
         }
         for (fw::Mesh* starMesh : starMeshes)
         {
-            starMesh->Draw(m_pWhiteShader, vec2(0, 0));
+            starMesh->Draw(m_pWhiteShader, cam, vec2(0, 0));
         }
     }
 

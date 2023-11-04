@@ -11,11 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\GameSurvivors.cpp" />
+    <ClCompile Include="Source\A2\Slot.cpp" />
+    <ClCompile Include="Source\A2\TicTacToe.cpp" />
+    <ClCompile Include="Source\A3\A3Game.cpp" />
+    <ClCompile Include="Source\A3\Player.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Player.cpp" />
-    <ClCompile Include="Source\Slot.cpp" />
-    <ClCompile Include="Source\TicTacToe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.vcxproj">
@@ -23,11 +23,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\A2\Slot.h" />
+    <ClInclude Include="Source\A2\TicTacToe.h" />
+    <ClInclude Include="Source\A3\A3Game.h" />
+    <ClInclude Include="Source\A3\Player.h" />
     <ClInclude Include="Source\DataTypes.h" />
-    <ClInclude Include="Source\GameSurvivors.h" />
-    <ClInclude Include="Source\Player.h" />
-    <ClInclude Include="Source\Slot.h" />
-    <ClInclude Include="Source\TicTacToe.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Shaders\Basic.vert" />

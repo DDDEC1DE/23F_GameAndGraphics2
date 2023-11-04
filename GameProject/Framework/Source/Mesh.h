@@ -6,12 +6,7 @@
 namespace fw {
 
 class ShaderProgram;
-
-struct VertexFormat
-{
-    float position[2];
-    float uv[2];
-};
+class Camera;
 class Mesh
 {
 public:
@@ -20,10 +15,10 @@ public:
     Mesh& operator=(const Mesh& other) = delete;
     virtual ~Mesh();
 
-    void Create(const std::vector<VertexFormat>& verts, GLenum primitiveType);
-    void Draw(ShaderProgram* pShader, vec2 offset);
+    void Create(std::vector<float>& verts, GLenum primitiveType);
+    void Draw(ShaderProgram* pShader, Camera* camera, vec2 position);
 
-
+protected:
     GLuint m_VBO = 0;
     int m_NumVerts = 0;
     GLenum m_PrimitiveType = GL_POINTS;

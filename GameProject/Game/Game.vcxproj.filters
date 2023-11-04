@@ -10,39 +10,45 @@
     <Filter Include="Data\Shaders">
       <UniqueIdentifier>{baf660a8-7ef9-4695-867c-c793ea6dfcd4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\A2">
+      <UniqueIdentifier>{5cefeee9-ddb9-484c-9a3a-8bfecfa156e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\A3">
+      <UniqueIdentifier>{9eeccf99-d0f9-4822-925c-4430792c7503}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\GameSurvivors.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="Source\A2\Slot.cpp">
+      <Filter>Source\A2</Filter>
     </ClCompile>
-    <ClCompile Include="Source\TicTacToe.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="Source\A2\TicTacToe.cpp">
+      <Filter>Source\A2</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Slot.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="Source\A3\A3Game.cpp">
+      <Filter>Source\A3</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="Source\A3\Player.cpp">
+      <Filter>Source\A3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\GameSurvivors.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClInclude Include="Source\DataTypes.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\TicTacToe.h">
-      <Filter>Source</Filter>
+    <ClInclude Include="Source\A2\Slot.h">
+      <Filter>Source\A2</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Slot.h">
-      <Filter>Source</Filter>
+    <ClInclude Include="Source\A2\TicTacToe.h">
+      <Filter>Source\A2</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player.h">
-      <Filter>Source</Filter>
+    <ClInclude Include="Source\A3\A3Game.h">
+      <Filter>Source\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\A3\Player.h">
+      <Filter>Source\A3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
