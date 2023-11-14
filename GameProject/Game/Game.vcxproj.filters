@@ -16,6 +16,9 @@
     <Filter Include="Source\A3">
       <UniqueIdentifier>{9eeccf99-d0f9-4822-925c-4430792c7503}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\A4">
+      <UniqueIdentifier>{69b24330-0ea6-4dfc-9c3a-8a43a67c3c38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -33,6 +36,15 @@
     <ClCompile Include="Source\A3\Player.cpp">
       <Filter>Source\A3</Filter>
     </ClCompile>
+    <ClCompile Include="Source\A4\Player.cpp">
+      <Filter>Source\A4</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\A4\TrackingCamera.cpp">
+      <Filter>Source\A4</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\A4\A4Game.cpp">
+      <Filter>Source\A4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\DataTypes.h">
@@ -49,6 +61,15 @@
     </ClInclude>
     <ClInclude Include="Source\A3\Player.h">
       <Filter>Source\A3</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\A4\Player.h">
+      <Filter>Source\A4</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\A4\TrackingCamera.h">
+      <Filter>Source\A4</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\A4\A4Game.h">
+      <Filter>Source\A4</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

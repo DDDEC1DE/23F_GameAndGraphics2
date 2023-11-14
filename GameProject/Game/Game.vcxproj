@@ -15,6 +15,9 @@
     <ClCompile Include="Source\A2\TicTacToe.cpp" />
     <ClCompile Include="Source\A3\A3Game.cpp" />
     <ClCompile Include="Source\A3\Player.cpp" />
+    <ClCompile Include="Source\A4\A4Game.cpp" />
+    <ClCompile Include="Source\A4\Player.cpp" />
+    <ClCompile Include="Source\A4\TrackingCamera.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -27,6 +30,9 @@
     <ClInclude Include="Source\A2\TicTacToe.h" />
     <ClInclude Include="Source\A3\A3Game.h" />
     <ClInclude Include="Source\A3\Player.h" />
+    <ClInclude Include="Source\A4\A4Game.h" />
+    <ClInclude Include="Source\A4\Player.h" />
+    <ClInclude Include="Source\A4\TrackingCamera.h" />
     <ClInclude Include="Source\DataTypes.h" />
   </ItemGroup>
   <ItemGroup>

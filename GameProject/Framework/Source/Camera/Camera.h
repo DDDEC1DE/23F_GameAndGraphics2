@@ -13,7 +13,7 @@ public:
    ~Camera();
      
     float m_ProjectionScale;
-   // float m_AspectRatio;
+    float m_AspectRatio;
     vec2 m_Position;
 };
 
