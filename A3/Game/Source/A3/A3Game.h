@@ -2,14 +2,14 @@
 #include "Framework.h"
 #include "Player.h"
 
-class A4Game : public fw::GameCore
+class A3Game : public fw::GameCore
 {
 
     const float TimeBetweenAnimations = 0.25f;
     const int Animation_Play_Times = 13;
 public:
-    A4Game(fw::FWCore* pFW);
-    virtual ~A4Game();
+    A3Game(fw::FWCore* pFW);
+    virtual ~A3Game();
 
     virtual void OnKeyDown(int keyCode) override;
     virtual void OnKeyUp(int keyCode) override;

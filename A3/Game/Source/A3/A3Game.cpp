@@ -1,9 +1,9 @@
-#include "A4Game.h"
+#include "A3Game.h"
 #include "DataTypes.h"
 
 
 
-A4Game::A4Game(fw::FWCore* pFW) :
+A3Game::A3Game(fw::FWCore* pFW) :
     fw::GameCore(pFW),
     m_pFW(pFW)
 {
@@ -21,7 +21,7 @@ A4Game::A4Game(fw::FWCore* pFW) :
 }
 
 
-A4Game::~A4Game()
+A3Game::~A3Game()
 {
     delete m_pWhiteShader;
     delete cam;
@@ -31,7 +31,7 @@ A4Game::~A4Game()
 
 
 
-void A4Game::OnKeyDown(int keyCode)
+void A3Game::OnKeyDown(int keyCode)
 {
     if (keyCode == VK_F1)
     {
@@ -44,19 +44,19 @@ void A4Game::OnKeyDown(int keyCode)
 
 }
 
-void A4Game::OnKeyUp(int keyCode)
+void A3Game::OnKeyUp(int keyCode)
 {
 
 
 }
 
-void A4Game::Update(float deltaTime)
+void A3Game::Update(float deltaTime)
 {
 
 
 }
 
-void A4Game::Draw()
+void A3Game::Draw()
 {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -69,7 +69,7 @@ void A4Game::Draw()
 
 
 
-std::vector<float> A4Game::GetCoords(fw::vec2 Position)
+std::vector<float> A3Game::GetCoords(fw::vec2 Position)
 {
     return  {
      Position.x - 2, Position.y,
