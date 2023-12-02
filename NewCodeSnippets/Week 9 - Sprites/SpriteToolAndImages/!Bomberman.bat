@@ -1,0 +1,1 @@
+SpriteTool.exe -input Bomberman -output Bomberman -padding 1 -bottomleft

@@ -1,0 +1,1 @@
+SpriteTool.exe -input Sokoban -output Sokoban -padding 1 -bottomleft
