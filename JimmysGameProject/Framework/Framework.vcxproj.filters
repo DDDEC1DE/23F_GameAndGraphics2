@@ -13,6 +13,15 @@
     <Filter Include="Source\Math">
       <UniqueIdentifier>{ea01aded-3135-49d4-83c6-c3295bb925c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Camera">
+      <UniqueIdentifier>{3dc6bc6a-c195-4229-8132-a5a785a8a7b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\RecourceManager">
+      <UniqueIdentifier>{78b979a7-28f9-4046-9179-bcf0cb4a7713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Animation">
+      <UniqueIdentifier>{d64458bb-8bce-4a7a-99e4-1a71fad099e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CoreHeaders.h">
@@ -60,6 +69,18 @@
     <ClInclude Include="Source\Texture.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\GameObject.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera\Camera.h">
+      <Filter>Source\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RecourceManager\RecourceManager.h">
+      <Filter>Source\RecourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation\Animation.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FWCore.cpp">
@@ -91,6 +112,18 @@
     </ClCompile>
     <ClCompile Include="Source\Texture.cpp">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera\Camera.cpp">
+      <Filter>Source\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RecourceManager\RecourceManager.cpp">
+      <Filter>Source\RecourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Animation\Animation.cpp">
+      <Filter>Source\Animation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

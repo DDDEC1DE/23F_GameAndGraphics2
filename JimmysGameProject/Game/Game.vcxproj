@@ -11,8 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Enemy.cpp" />
+    <ClCompile Include="Source\GameCamera.cpp" />
     <ClCompile Include="Source\GameSurvivors.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.vcxproj">
@@ -21,7 +24,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\DataTypes.h" />
+    <ClInclude Include="Source\Enemy.h" />
+    <ClInclude Include="Source\GameCamera.h" />
     <ClInclude Include="Source\GameSurvivors.h" />
+    <ClInclude Include="Source\Player.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Shaders\Basic.vert" />

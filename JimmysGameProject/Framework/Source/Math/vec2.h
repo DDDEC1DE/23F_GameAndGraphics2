@@ -20,6 +20,7 @@ public:
 	void operator*=(float o) { x *= o; y *= o; }
 	void operator/=(float o) { x /= o; y /= o; }
 
+	static float Magnitude(vec2 inputVec) { return static_cast<float>(sqrt(inputVec.x * inputVec.x + inputVec.y * inputVec.y)); }
 public:
 	float x = 0;
 	float y = 0;

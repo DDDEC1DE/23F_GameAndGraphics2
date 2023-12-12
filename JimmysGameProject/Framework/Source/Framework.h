@@ -9,9 +9,12 @@
 
 #include "FWCore.h"
 #include "FWWindows.h"
+#include "RecourceManager/RecourceManager.h"
 #include "GameCore.h"
 #include "Mesh.h"
 #include "Texture.h"
+#include "Camera/Camera.h"
+#include "GameObject.h"
 #include "Math/vec2.h"
 #include "Utility/ShaderProgram.h"
 #include "Utility/Utility.h"

@@ -1,10 +1,11 @@
 #pragma once
 
 #include "CoreHeaders.h"
+#include "RecourceManager/RecourceManager.h"
 
 namespace fw {
 
-class Texture
+class Texture : public Resource
 {
 public:
     Texture();
@@ -12,6 +13,11 @@ public:
     virtual ~Texture();
 
     GLuint GetTextureID() { return m_TextureID; }
+
+    static Resource::Type GetType()
+    {
+        return Resource::Type::Texture;
+    }
 
 protected:
     void Create(void* pixels, int w, int h);

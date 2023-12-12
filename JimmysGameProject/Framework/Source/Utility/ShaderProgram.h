@@ -1,10 +1,11 @@
 #pragma once
 
 #include "Math/vec2.h"
+#include "RecourceManager/RecourceManager.h"
 
 namespace fw {
 
-class ShaderProgram
+class ShaderProgram : public Resource
 {
 public:
     ShaderProgram();
@@ -15,6 +16,11 @@ public:
 
     void SetUniform1f(const char* uniformName, float value);
     void SetUniform2f(const char* uniformName, vec2 value);
+
+    static Resource::Type GetType()
+    {
+        return Resource::Type::Shader;
+    }
 
 protected:
     void Cleanup();
