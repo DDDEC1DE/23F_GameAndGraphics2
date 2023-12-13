@@ -31,6 +31,8 @@ public:
 
 protected:
 
+    void DirectionInputChanged();
+
     vec2 m_Velocity;
     float m_Speed = 15.0f;
     fw::AnimationPlayer* m_AnimationPlayer = nullptr;

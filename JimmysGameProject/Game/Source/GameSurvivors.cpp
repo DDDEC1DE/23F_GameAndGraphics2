@@ -19,20 +19,58 @@ GameSurvivors::GameSurvivors(fw::FWCore* pFW) : fw::GameCore(pFW)
     m_pResourceManager->Add("BackgroundTexture", new fw::Texture("Data/Textures/BG.png"));
 
     {
-        m_pResourceManager->Add("KnightRunTexture_f1", new fw::Texture("Data/Textures/knight_run_anim_f1.png"));
-        m_pResourceManager->Add("KnightRunTexture_f5", new fw::Texture("Data/Textures/knight_run_anim_f5.png"));
+        m_pResourceManager->Add("player_down_1",    new fw::Texture("Data/Textures/player_down1.png"));
+        m_pResourceManager->Add("player_down_2",    new fw::Texture("Data/Textures/player_down2.png"));
+        m_pResourceManager->Add("player_down_3",    new fw::Texture("Data/Textures/player_down3.png"));
+        m_pResourceManager->Add("player_up_1",      new fw::Texture("Data/Textures/player_up1.png"));
+        m_pResourceManager->Add("player_up_2",      new fw::Texture("Data/Textures/player_up2.png"));
+        m_pResourceManager->Add("player_up_3",      new fw::Texture("Data/Textures/player_up3.png"));
+        m_pResourceManager->Add("player_left_1",    new fw::Texture("Data/Textures/player_left1.png"));
+        m_pResourceManager->Add("player_left_2",    new fw::Texture("Data/Textures/player_left2.png"));
+        m_pResourceManager->Add("player_left_3",    new fw::Texture("Data/Textures/player_left3.png"));
+        m_pResourceManager->Add("player_right_1",   new fw::Texture("Data/Textures/player_right1.png"));
+        m_pResourceManager->Add("player_right_2",   new fw::Texture("Data/Textures/player_right2.png"));
+        m_pResourceManager->Add("player_right_3",   new fw::Texture("Data/Textures/player_right3.png"));
 
-        fw::Animation* runAnim = new fw::Animation();
-        runAnim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("KnightRunTexture_f1"));
-        runAnim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("KnightRunTexture_f5"));
-        runAnim->m_bIsLooping = true;
+        fw::Animation* player_up_anim = new fw::Animation();
+        player_up_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_up_1"));
+        player_up_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_up_2"));
+        player_up_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_up_3"));
+        player_up_anim->m_bIsLooping = true;
 
-        m_pResourceManager->Add("KnightRunAnimation", runAnim);
+        m_pResourceManager->Add("Walk_up", player_up_anim);
+        
+        fw::Animation* player_right_anim = new fw::Animation();
+        player_right_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_right_1"));
+        player_right_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_right_2"));
+        player_right_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_right_3"));
+        player_right_anim->m_bIsLooping = true;
 
-        fw::AnimationSet* animSet = new fw::AnimationSet();
-        animSet->m_AnimationList["KnightRunAnimation"] = runAnim;
+        m_pResourceManager->Add("Walk_right", player_right_anim);    
+        
+        fw::Animation* player_left_anim = new fw::Animation();
+        player_left_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_left_1"));
+        player_left_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_left_2"));
+        player_left_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_left_3"));
+        player_left_anim->m_bIsLooping = true;
 
-        m_pResourceManager->Add("KnightAnimationSet", animSet);
+        m_pResourceManager->Add("Walk_left", player_left_anim);       
+        
+        fw::Animation* player_down_anim = new fw::Animation();
+        player_down_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_down_1"));
+        player_down_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_down_2"));
+        player_down_anim->AddFrame(m_pResourceManager->GetResource<fw::Texture>("player_down_3"));
+        player_down_anim->m_bIsLooping = true;
+
+        m_pResourceManager->Add("Walk_down", player_down_anim);
+
+        fw::AnimationSet* sokoban_animation_set = new fw::AnimationSet();
+        sokoban_animation_set->m_AnimationList["Walk_up"]    = player_up_anim;
+        sokoban_animation_set->m_AnimationList["Walk_right"] = player_right_anim;
+        sokoban_animation_set->m_AnimationList["Walk_left"]  = player_left_anim;
+        sokoban_animation_set->m_AnimationList["Walk_down"]  = player_down_anim;
+
+        m_pResourceManager->Add("PlayerAnimationSet", sokoban_animation_set);
     }
 
     m_pResourceManager->Add("EnemyFlyerTexture", new fw::Texture("Data/Textures/fly_anim_f1.png"));
@@ -82,7 +120,7 @@ GameSurvivors::GameSurvivors(fw::FWCore* pFW) : fw::GameCore(pFW)
         m_pResourceManager->GetResource<fw::ShaderProgram>("BasicShader"),
         vec2(50, 50),
         vec2(0.1f, 0.1f),
-        m_pResourceManager->GetResource<fw::AnimationSet>("KnightAnimationSet")
+        m_pResourceManager->GetResource<fw::AnimationSet>("PlayerAnimationSet")
     ); 
     
     m_pCamera = new GameCamera(fw::vec2(50, 50), 50);

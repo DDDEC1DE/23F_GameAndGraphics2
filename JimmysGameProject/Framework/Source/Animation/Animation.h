@@ -103,21 +103,34 @@ public:
     void SetAnimation(std::string animationName)
     {
         m_pAnimation = m_pAnimationSet->GetAnimation(animationName);
-        m_FrameIndex = 0;
-        m_pFrame = &m_pAnimation->m_AnimationFrames[0];
         m_TimeOnFrame = 0;
+        Rewind();
     }
 
     void Play()
     {
         m_bPlaying = true;
-        int m_FrameIndex = 0;
+    }    
+    
+    void Stop()
+    {
+        m_bPlaying = false;
+    }
+       
+    void Rewind()
+    {
+        m_FrameIndex = 0;
         m_pFrame = &m_pAnimation->m_AnimationFrames[0];
     }
 
     Texture* GetCurrentTexture()
     {
         return m_pFrame->m_Texture;
+    }
+
+    bool GetIsPlaying() const
+    {
+        return m_bPlaying;
     }
 
 private:
