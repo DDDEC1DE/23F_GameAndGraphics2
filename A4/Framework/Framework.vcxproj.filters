@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4c3b7075-b9c1-4f57-9c58-e2aac128be58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GL">
+      <UniqueIdentifier>{d4bb819d-2c10-4b22-a84b-7d2ad0261f11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utility">
+      <UniqueIdentifier>{5fe8f2c3-b371-4841-b720-a4a576eb24df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Math">
+      <UniqueIdentifier>{ea01aded-3135-49d4-83c6-c3295bb925c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Camera">
+      <UniqueIdentifier>{3dc6bc6a-c195-4229-8132-a5a785a8a7b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\RecourceManager">
+      <UniqueIdentifier>{78b979a7-28f9-4046-9179-bcf0cb4a7713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Animation">
+      <UniqueIdentifier>{d64458bb-8bce-4a7a-99e4-1a71fad099e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\CoreHeaders.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Framework.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FWCore.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GL\glext.h">
+      <Filter>Source\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GL\GLExtensions.h">
+      <Filter>Source\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GL\MyGLContext.h">
+      <Filter>Source\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GL\wglext.h">
+      <Filter>Source\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GL\WGLExtensions.h">
+      <Filter>Source\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FWWindows.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameCore.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mesh.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\ShaderProgram.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\Utility.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\vec2.h">
+      <Filter>Source\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Texture.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObject.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera\Camera.h">
+      <Filter>Source\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RecourceManager\RecourceManager.h">
+      <Filter>Source\RecourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation\Animation.h">
+      <Filter>Source\Animation</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\FWCore.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GL\GLExtensions.cpp">
+      <Filter>Source\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GL\MyGLContext.cpp">
+      <Filter>Source\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GL\WGLExtensions.cpp">
+      <Filter>Source\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FWWindows.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameCore.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mesh.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\ShaderProgram.cpp">
+      <Filter>Source\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Utility.cpp">
+      <Filter>Source\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Texture.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObject.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera\Camera.cpp">
+      <Filter>Source\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RecourceManager\RecourceManager.cpp">
+      <Filter>Source\RecourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Animation\Animation.cpp">
+      <Filter>Source\Animation</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
